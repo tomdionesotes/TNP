@@ -7,4 +7,6 @@ var server = http.createServer(function (
     res.end('<h1>Hello there</h1>');
   });
 
-server.listen(3000);
+var port = Number(process.env.PORT || 3000);
+
+server.listen(port);
