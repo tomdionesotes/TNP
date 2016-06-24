@@ -20,29 +20,41 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
   <script src="core.js"></script>
 
-  <body ng-controller="mainController">
-    <div class="container">
+</head>
 
-      <div class="jumbotron text-center">
-        <h1>todo lists are useful<span class="label label-info">{{ todos.length }}</span></h1>
+<body ng-controller="mainController">
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>todo lists are useful<span class="label label-info">{{ todos.length }}</span></h1>
+    </div>
+
+    <div id="todo-list" class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+
+        <div class="checkbox" ng-repeat="todo in todos">
+          <label>
+            <input type="checkbox" ng-click="deleteTodo(todo._id)">
+          </label>
+        </div>
+
       </div>
+    </div>
 
-      <div id="todo-list" class="row">
-        <div class="col-sm-4 col-sm-offset-4">
+    <div id="todo-form" class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form>
 
-          <div class="checkbox" ng-repeat="todo in todos">
-            <label>
-              <input type="checkbox" ng-click="deleteTodo(todo._id)">
-            </label>
+          <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="make sure to shave the yak" ng-model="formData.text">
           </div>
 
-        </div>
-      </div>
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
 
-      <div id="todo-form" class="row">
+        </form>
       </div>
-
     </div>
-  </body>
 
-</head>
+  </div>
+</body>
+</html>
