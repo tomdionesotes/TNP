@@ -28,8 +28,10 @@ app.get('*', function(req, res) {
 });
 
 // listen
-app.listen(8080);
-console.log("App listening on port 8080");
+var port = Number(process.env.PORT)
+
+app.listen(post);
+console.log("App listening on port: " + port);
 
 // routes
 app.get('/api/todos', function(req, res) {
