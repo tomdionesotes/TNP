@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
 
-var todo = mongoose.model('todo', {
+var Todo = mongoose.model('Todo', {
   text: String
 });
 
