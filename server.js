@@ -6,8 +6,10 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
+var mongoConnectionString = process.env.MONGODB_URI
+
 // config
-mongoose.connect('mongodb://127.0.0.1:27017/test');
+mongoose.connect('mongoConnectionString');
 
 app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
