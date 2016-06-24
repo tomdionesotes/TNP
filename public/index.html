@@ -20,7 +20,29 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
   <script src="core.js"></script>
 
-  <body ng-controller='mainController'>
+  <body ng-controller="mainController">
+    <div class="container">
+
+      <div class="jumbotron text-center">
+        <h1>todo lists are useful<span class="label label-info">{{ todos.length }}</span></h1>
+      </div>
+
+      <div id="todo-list" class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+
+          <div class="checkbox" ng-repeat="todo in todos">
+            <label>
+              <input type="checkbox" ng-click="deleteTodo(todo._id)">
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="todo-form" class="row">
+      </div>
+
+    </div>
   </body>
 
 </head>
