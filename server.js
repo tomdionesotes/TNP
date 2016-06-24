@@ -22,7 +22,7 @@ var todo = mongoose.model('todo', {
 
 // front end
 app.get('*', function(req, res) {
-  res.sendFile('./public/index.html');
+  res.sendfile('./public/index.html');
 });
 
 // listen
