@@ -1,12 +1,6 @@
-var http = require('http');
-
-var server = http.createServer(function (
-  req, res){
-    res.writeHead(200, {'Content-Type':
-    'text/html'});
-    res.end('<h1>hi there</h1>');
-  });
-
-var port = Number(process.env.PORT);
-
-server.listen(port);
+var express = require('express');
+var app = express();
+var mongoose = require('mongoose');
+var morgan = require('morgan');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
