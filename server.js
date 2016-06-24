@@ -6,7 +6,7 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-var mongoConnectionString = process.env.MONGODB_URI
+var mongoConnectionString = process.env.MONGODB_URI;
 
 // config
 mongoose.connect('mongoConnectionString');
@@ -28,7 +28,7 @@ app.get('*', function(req, res) {
 });
 
 // listen
-var port = Number(process.env.PORT)
+var port = Number(process.env.PORT);
 
 app.listen(post);
 console.log("App listening on port: " + port);
